@@ -8,5 +8,4 @@ public class Test {
 		
 		System.out.println("Completed test.");
 	}
-	
 }

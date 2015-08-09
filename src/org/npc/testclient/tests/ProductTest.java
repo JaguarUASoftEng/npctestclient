@@ -73,7 +73,7 @@ public class ProductTest implements TestInterface {
 	}
 	
 	private Product buildNewProduct() {
-		return (new Product()).setLookupCode(RandomStringUtils.random(PRODUCT_LOOKUP_CODE_LENGTH)).
+		return (new Product()).setLookupCode(RandomStringUtils.randomAlphabetic(PRODUCT_LOOKUP_CODE_LENGTH)).
 			setCreatedOn(LocalDateTime.now().minusDays(this.random.nextInt(DAYS_IN_FIVE_YEARS))).
 			setCount(MIN_PRODUCT_COUNT + this.random.nextInt(MAX_PRODUCT_COUNT - MIN_PRODUCT_COUNT));
 	}
@@ -85,7 +85,7 @@ public class ProductTest implements TestInterface {
 	private static final int MAX_PRODUCT_COUNT = 300;
 	private static final int DAYS_IN_FIVE_YEARS = 1827;
 	private static final int PRODUCT_LOOKUP_CODE_LENGTH = 25;
-	private static final String BASE_REQUEST_URI = "http://localhost:8080/test/";
+	private static final String BASE_REQUEST_URI = "http://localhost:4567/test/";
 	
 	public ProductTest() {
 		random = new Random();
