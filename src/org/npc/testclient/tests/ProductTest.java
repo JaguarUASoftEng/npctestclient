@@ -85,7 +85,7 @@ public class ProductTest implements TestInterface {
 	private static final int MAX_PRODUCT_COUNT = 300;
 	private static final int DAYS_IN_FIVE_YEARS = 1827;
 	private static final int PRODUCT_LOOKUP_CODE_LENGTH = 25;
-	private static final String BASE_REQUEST_URI = "http://localhost:4567/test/";
+	private static final String BASE_REQUEST_URI = "http://localhost:8080/test/";
 	
 	public ProductTest() {
 		random = new Random();
