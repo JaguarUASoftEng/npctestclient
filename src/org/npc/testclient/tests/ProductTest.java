@@ -73,9 +73,10 @@ public class ProductTest implements TestInterface {
 	}
 	
 	private Product buildNewProduct() {
-		return (new Product()).setLookupCode(RandomStringUtils.randomAlphabetic(PRODUCT_LOOKUP_CODE_LENGTH)).
-			setCreatedOn(LocalDateTime.now().minusDays(this.random.nextInt(DAYS_IN_FIVE_YEARS))).
-			setCount(MIN_PRODUCT_COUNT + this.random.nextInt(MAX_PRODUCT_COUNT - MIN_PRODUCT_COUNT));
+		return (new Product()).setDescription("").setLookupCode(RandomStringUtils.randomAlphabetic(PRODUCT_LOOKUP_CODE_LENGTH)).
+			setPrice(-1.0).setItemType(-1).setCost(-1.0).setQuantity(MIN_PRODUCT_COUNT + this.random.nextInt(MAX_PRODUCT_COUNT - MIN_PRODUCT_COUNT)).setReorderPoint(-1).
+			setRestockLevel(-1).setParentItem(-1).setExtendedDescription("").setActive(-1).setMSRP(-1.00).
+			setCreatedOn(LocalDateTime.now().minusDays(this.random.nextInt(DAYS_IN_FIVE_YEARS)));
 	}
 
 	private Random random;
