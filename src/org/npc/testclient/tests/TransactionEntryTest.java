@@ -21,8 +21,8 @@ public class TransactionEntryTest implements TestInterface {
 		}
 
 		TransactionEntryListing apiTransactionEntryListing = this.testTransactionEntryListingGet();
-		if (apiTransactionEntryListing.getTransactionEntries().size() == PRODUCT_PUT_COUNT) {
-			TransactionEntry apiTransactionEntry = this.testTransactionEntryGet(apiTransactionEntryListing.getTransactionEntrys().get(0));
+		if (apiTransactionEntryListing.getTransactionEntries().size() == TRANSACTION_ENTRY_PUT_COUNT) {
+			TransactionEntry apiTransactionEntry = this.testTransactionEntryGet(apiTransactionEntryListing.getTransactionEntries().get(0));
 			if (!apiTransactionEntry.getId().equals(new UUID(0, 0))) {
 				System.out.println("Successful test.");
 			} else {
@@ -72,8 +72,8 @@ public class TransactionEntryTest implements TestInterface {
 	}
 	
 	private TransactionEntry buildNewTransactionEntry() {
-		return (new TransactionEntry()).setRecordID(-1.0).setTransactionID(-1.0).
-			setProductID(-1.0).setPrice(-1.00).setQuantity(-1);
+		return (new TransactionEntry()).setRecordID(-1).setTransactionID(-1).
+			setProductID(-1).setPrice(-1.00f).setQuantity(-1);
 	}
 
 	private Random random;
