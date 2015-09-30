@@ -67,7 +67,7 @@ public class TransactionEntryTest implements TestInterface {
 	private TransactionEntry testTransactionEntryGet(TransactionEntry transactionEntryToTest) {
 		return ClientBuilder.newClient().
 			target(BASE_REQUEST_URI).
-			path("apiv0").path("transactionEntries").path(transactionEntryToTest.getId().toString()).
+			path("apiv0").path("transactionEntry").path(transactionEntryToTest.getId().toString()).
 			request(MediaType.APPLICATION_JSON).get(TransactionEntry.class);
 	}
 	
