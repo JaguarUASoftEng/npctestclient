@@ -23,7 +23,7 @@ public class TransactionEntryTest implements TestInterface {
 		TransactionEntryListing apiTransactionEntryListing = this.testTransactionEntryListingGet();
 		if (apiTransactionEntryListing.getTransactionEntries().size() == TRANSACTION_ENTRY_PUT_COUNT) {
 			TransactionEntry apiTransactionEntry = this.testTransactionEntryGet(apiTransactionEntryListing.getTransactionEntries().get(0));
-			if (!apiTransactionEntry.getRecordID().equals(-1)) {
+			if (apiTransactionEntry.getRecordID() != -1) {
 				System.out.println("Successful test.");
 			} else {
 				System.out.println("TransactionEntry get did not return a valid transaction entry.");
@@ -47,7 +47,7 @@ public class TransactionEntryTest implements TestInterface {
 				System.out.println("TransactionEntry put failed, returned an empty object.");
 				successfulPuts = false;
 				break;
-			} else if (apiTransactionEntry.getRecordID().equals(-1)) {
+			} else if (apiTransactionEntry.getRecordID() == -1) {
 				System.out.println("TransactionEntry put failed, instance was not assigned an ID.");
 				successfulPuts = false;
 				break;
@@ -74,7 +74,7 @@ public class TransactionEntryTest implements TestInterface {
 	private TransactionEntry buildNewTransactionEntry() {
 		return (new TransactionEntry()).setRecordID(-1).setTransactionID(-1).
 			setProductID(new UUID(0,0)).setPrice(-1.00f).
-			setQuantity(MIN_TRANSACTION_ENTRY_COUNT + this.random.nextInt(MAX_TRANSACTION_ENTRY_COUNT - MIN_TRANSACTION_ENTRY_COUNT);
+			setQuantity(MIN_TRANSACTION_ENTRY_COUNT + this.random.nextInt(MAX_TRANSACTION_ENTRY_COUNT - MIN_TRANSACTION_ENTRY_COUNT));
 	}
 
 	private Random random;
