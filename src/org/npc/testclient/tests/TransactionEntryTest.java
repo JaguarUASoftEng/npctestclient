@@ -8,7 +8,6 @@ import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 
-import org.apache.commons.lang3.RandomStringUtils;
 import org.npc.testclient.tests.interfaces.TestInterface;
 import org.npc.testmodel.api.TransactionEntry;
 import org.npc.testmodel.api.TransactionEntryListing;
